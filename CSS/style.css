@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@font-face{
+    font-family:"Worstveld Sling W05 Regular";
+    src:url("../Fonts/5111847/78668ee0-b774-4508-85de-f45a8ad0f43a.woff2") format("woff2"),url("../Fonts/5111847/1c01f33d-6612-46fe-b61b-4b88340eb3c2.woff") format("woff");
+}
+#content{
+    display: none;
+}
+#load{
+    width: 100vh;
+    width: 100vw;
+}
+header,body,h1,h2,h3,h4,h5,p,a,section,div,img,span{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigationBar{
+      padding: 2%;
+      width: 100vw;
+      position: fixed;
+      background: linear-gradient(#000000,rgba(0, 0, 0, 0.425)000);  
+  }
+header{
+    width: 100vw;
+    height: 100vh;
+}
+.backgroundContainer{
+    overflow: hidden;
+    background-image: url('../images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110% 99%;
+    transition: background-position;
+    opacity: .95;  
+}
+.navigationBar{
+    padding: 2%;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(#000000,rgba(0, 0, 0, 0.425)000);  
+}
+.hamburger{
+    display: none;
+}
+.navigationBarCollaspe{
+    opacity: .9;
+    background-blend-mode: lighten;
+    padding: 1.5vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(#000000,rgba(0, 0, 0, 0.425)000);  
+    
+    background-size: 120% 100%;
+}
+.navigationImage{
+    width: 50vw;
+    display: inline-block;
+    color: #cd8cf8;
+}
+.navigationMenu{
+    display: inline-block;
+    text-decoration: none;
+    width: 10vw;
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 900;
+    font-family: sans-serif,Arial, Helvetica;
+    font-size: 1rem;
+    -moz-transition-property: font-varient,color,background;
+    transition-property: font-varient,color,background;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+}
+.navigationMenu:hover{
+    color: #a848f7;
+    background: linear-gradient(#000000,rgba(0, 0, 0, 0.795)000);
+    font-variant: small-caps;
+}
+@media all and (max-width:768px){
+    .navigationImage{
+        width: 80%;
+    }  
+    .navigationBar{
+        padding: 3%;
+    }
+    .navigationMenu{
+        display: none;
+
+    }
+    .hamburger {
+        z-index: 100;
+        padding: 0px 0px;
+        display:inline-block;
+        margin-right:10px;
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        font: inherit;
+        color: #ffffff;
+        text-transform: none;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        overflow: visible; }
+    .hamburger:hover {
+          opacity: 0.7; }
+    .hamburger.is-active:hover {
+          opacity: 0.7; }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+          background-color: rgb(255, 255, 255); }
+      
+    .hamburger-box {
+        width: 40px;
+        height: 24px;
+        display: inline-block;
+        position: relative; }
+      
+    .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px; }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+          width: 40px;
+          height: 4px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 4px;
+          position: absolute;
+          transition-property: transform;
+          transition-duration: 0.15s;
+          transition-timing-function: ease; }
+    .hamburger-inner::before, .hamburger-inner::after {
+          content: "";
+          display: block; }
+    .hamburger-inner::before {
+          top: -10px; }
+    .hamburger-inner::after {
+          bottom: -10px; }
+    .hamburger--spin .hamburger-inner {
+        transition-duration: 0.22s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+    .hamburger--spin .hamburger-inner::before {
+          transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    .hamburger--spin .hamburger-inner::after {
+          transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+      
+    .hamburger--spin.is-active .hamburger-inner {
+        transform: rotate(3825deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .hamburger--spin.is-active .hamburger-inner::before {
+          top: 0;
+          opacity: 0;
+          transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    .hamburger--spin.is-active .hamburger-inner::after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+}
+.welcomeText{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    top: 50%;
+    margin-top: -10vmax;
+    position: relative;
+    font-size: 5vmax;
+    font-family: 'Comic Neue', cursive;
+    color: #ffffff;
+    width: -moz-fit-content;
+    font-weight: bolder;
+}
+.welcomeText h1{
+    height: 10vmax;
+    overflow: hidden;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0px auto;
+}
+@media screen and (max-width:768px){
+    .welcomeText{
+        font-size: 1.6rem;
+    }
+    .welcomeText h1{
+        height: 3.2rem;
+        overflow: visible;
+    }
+}
+.welcomeText p{
+    text-align: center;
+}
+.animatingBackground1{
+    background-color: rgba(0, 0, 0, 0.651);
+    z-index: -1;
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    animation-name: textAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-direction: forwards;
+}
+.animatingBackground2{
+    background-color: rgba(0, 0, 0, 0.753);
+    z-index: -1;
+    position: absolute;
+    top: 60%;
+    height: 40%;
+    width: 56%;
+    margin:0px 10%;
+    animation-name: textAnimationRev;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.welcomeText:hover .animatingBackground1{
+    animation-name: textAnimationRev2;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+.w1{
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.w2{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.w3{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.w4{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.w5{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.w6{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+.w7{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.w8{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+}
+.w9{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+.w10{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 4.5s;
+}
+.w11{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+.w12{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 5.5s;
+}
+.w13{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+.w14{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+}
+.w15{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+}
+.w16{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 7.5s;
+}
+.w17{
+    visibility: hidden;
+    animation-name: animatingWord;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
+}
+@keyframes textAnimation{
+    0% {width: 0%;}
+    100%{width: 100%;}
+}
+@keyframes textAnimationRev{
+    0% {margin-left: 100%;}
+    100%{margin-left: 22%;}
+}
+@keyframes textAnimationRev2{
+    0% {margin-left: 100%;}
+    100%{margin-left: 0%;}
+}
+@keyframes animatingWord{
+    0%{margin-left: 100%;visibility: visible;}
+    100%{margin-left: 0%;visibility: visible;}
+}
+main{
+    height: 100vh;
+    width: 100vw;
+}
+@media all and (max-width:768px){
+    main{
+        height: fit-content;
+        width: 100vw;
+        padding-bottom: 25vh;
+    }
+}
+#aboutMe{
+    width: 50vw;
+    display: block;
+    margin: 0px auto;
+    margin-top: 25vh;
+    font-size: 10vw;
+}
+#aboutMe h1{
+    font-family: "Worstveld Sling W05 Regular";
+    font-size: 10vw;
+    text-align: center;
+}
+#aboutMe p{
+    font-family: 'Comic Neue', cursive;
+    text-align: justify;
+    font-size: .25em;
+}
+#aboutMe a{
+    text-decoration: none;
+    opacity: .5;
+    color: inherit;
+    background: transparent;
+    transition-property: background;
+    transition-duration: 1s;
+}
+#aboutMe a:hover{
+    background-color: #6b686896;
+}
+@media (max-width:760px){
+    #aboutMe{
+        width: 80vw;
+        display: block;
+        margin: 0px auto;
+        margin-top: 25vh;
+        font-size: 15vw;
+    }
+    #aboutMe h1{
+        font-size: 20vw;
+        text-align: center;
+    }
+}
+aside{
+    z-index: 1;
+    background: #0000002a;
+    width: 50px;
+    margin-top: -100px;
+    display: block;
+    float: left;
+    position: fixed;
+    top: 50vh;
+}
+aside i{
+    display: block;
+    width: 100%;
+}
+aside h3{
+    font-size: .7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+svg{
+    background: #000000;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+    width: 50px;
+    transition-delay: padding;
+    transition-duration: .5s;
+    transition-delay: .1s;
+}
+.facebook{
+    background: #3b5998;
+}
+.instagram{
+    background: linear-gradient(45deg,#405de6,#5851db,#833ab4,#c13584,#e1206c,#fd1d1d);
+}
+.linkdin{
+    background: #0077b5;
+}
+svg:hover{
+    padding-left: 50px;
+}
+@media(max-width:768px){
+    aside{
+        display: none;
+    }
+}
+footer{
+    width: 100vw;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #000000;
+    color: #ffffff;
+}
+footer a{
+    text-decoration: none;
+    color: #b7b7b8;
+    
+}
+footer a:hover{
+    opacity: .5;
+}
+footer #stayConnected{
+    display: inline-block;
+    padding: 10%;
+    width: 40%;
+}
+footer svg{
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+    transition-duration: 2s;
+    background: #000000;
+}
+footer svg:hover{
+    padding-left: 0%;
+    transform: rotate(3600deg);
+}
+footer #navigate{
+    display: inline-block;
+    width: 25%;
+}
+footer li{
+    text-decoration: none;
+    list-style: none;
+}
+@media (max-width:768px){
+    footer #stayConnected{
+        text-align: center;
+        display: block;
+        width: 75%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    footer #navigate{
+        display: block;
+        width: 100vw;
+        margin: auto;
+        text-align: center;
+    }
+}
+.navigationDrawer{
+    width: 75vw;
+    height: 90vh;
+    position: fixed;
+    right: 0px;
+    opacity: 1;
+    background: #000000ef;
+    display: none;
+    overflow: scroll;
+}
+.navigationDrawer ul{
+    list-style: none;
+}
+.navigationDrawer li{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 5vw;
+    text-align: center;
+} 
+.navigationDrawer li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navigationDrawer li:hover{
+    background: #000000f3;
+    color: rgb(9, 248, 248);
+    font-variant: small-caps;
+}
+.navigationDrawer li a:hover{
+    background: #000000f3;
+    color: rgb(9, 248, 248);
+    font-variant: small-caps;
+}
+.navigationDrawer hr{
+    opacity: .1;
+    width: 90%;
+}
+.navigationDrawer svg{
+    width: 15%;
+    margin: 4%;
+}
+.navigationDrawer svg:hover{
+    padding-left: 0%;
+    transform: rotate(3600deg);
+}
+.welcomeText,main,footer{
+    z-index: -100;
+}
