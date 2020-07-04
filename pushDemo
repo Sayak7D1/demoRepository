@@ -1,0 +1,7 @@
+Command to push new file into cloud regularly:
+
+1. git add .
+2. git commit -m "messages"
+3. git push -u origin master
+
+Thus we can synconize out local git to cloud
